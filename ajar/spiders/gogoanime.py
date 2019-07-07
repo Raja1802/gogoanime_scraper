@@ -14,22 +14,7 @@ class QuotesSpider(CrawlSpider):
     allowed_domains = ['www6.gogoanime.io']
     start_urls = ['https://www6.gogoanime.io']
 
-    rules = (Rule(sle(allow='', deny=(
-        '/category/',
-        '/contact-us.html',
-        '/about-us.html',
-        '/search.html',
-        '/genre/',
-        '/login.html',
-        '/sub-category/',
-        '/forget.html',
-        '/privacy.html',
-        '/anime-list.html',
-        '/new-season.html',
-        '/anime-movies.html',
-        '/popular.html',
-        '/register.html',
-        )), callback='parse_anime_links', follow=True), )
+    rules = (Rule(sle(allow=''), callback='parse_anime_links', follow=True), )
 
     def parse_anime_links(self, response):
         item = []
