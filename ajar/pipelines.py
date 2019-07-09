@@ -24,8 +24,8 @@ class AjarPipeline(object):
         self.curr = self.conn.cursor()
 
     def create_table(self):
-        self.curr.execute("""DROP TABLE IF EXISTS gogoanime_all_1""")
-        self.curr.execute("""create table gogoanime_all_1(
+        self.curr.execute("""DROP TABLE IF EXISTS gogoanime_all_2""")
+        self.curr.execute("""create table gogoanime_all_2(
                              episode text,
                              name_anime text,
                              download_url text,
@@ -58,7 +58,7 @@ class AjarPipeline(object):
         return item
 
     def store_db(self, item):
-        self.curr.execute("""insert into gogoanime_all_1 values (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)""", (
+        self.curr.execute("""insert into gogoanime_all_2 values (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)""", (
             ''.join(item['episode']),
             ''.join(item['name_anime']),
             ''.join(item['download_url']),
